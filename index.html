@@ -1,40 +1,585 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Teja Adapa — Site Reliability Engineer specializing in AWS, production reliability, incident response and observability."><title>Teja Adapa | Site Reliability Engineer</title>
-<style>
-:root{--bg:#05070b;--panel:#0b1018;--panel2:#101722;--text:#f4f7fb;--muted:#9ba7b6;--green:#63e6be;--blue:#69a7ff;--line:#1d2836;--glow:rgba(99,230,190,.16)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.65;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 10%,rgba(105,167,255,.09),transparent 25%),radial-gradient(circle at 88% 25%,rgba(99,230,190,.07),transparent 28%);z-index:-1}.wrap{width:min(1180px,calc(100% - 42px));margin:auto}a{color:inherit;text-decoration:none}.nav{position:sticky;top:0;z-index:20;background:rgba(5,7,11,.8);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:20px;font-weight:900;letter-spacing:-.03em}.brand span,.accent{color:var(--green)}.links{display:flex;gap:24px;color:var(--muted);font-size:13px}.links a:hover{color:white}.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;padding:70px 0}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:800}.hero h1{font-size:clamp(52px,7.5vw,92px);line-height:.98;letter-spacing:-.065em;margin:16px 0 24px}.hero h1 small{display:block;font-size:.43em;line-height:1.2;color:#c8d0db;letter-spacing:-.035em;margin-top:12px}.lead{font-size:18px;color:var(--muted);max-width:680px}.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{padding:12px 18px;border-radius:9px;border:1px solid var(--line);font-weight:750;font-size:14px;background:#101722}.btn.primary{background:var(--green);color:#06100d;border-color:var(--green)}.btn:hover{transform:translateY(-2px);transition:.2s}.console{border:1px solid var(--line);background:linear-gradient(145deg,#0d141f,#080c12);border-radius:18px;box-shadow:0 30px 90px #0009;overflow:hidden}.console-top{height:44px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 16px;gap:7px;color:#6f7e91;font:12px ui-monospace,monospace}.dot{width:8px;height:8px;border-radius:50%;background:#344154}.console pre{margin:0;padding:25px;color:#a9f2da;font:13px/2 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap}.cursor{display:inline-block;width:8px;height:15px;background:var(--green);vertical-align:middle;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}section{padding:88px 0;scroll-margin-top:70px}.section-title{display:grid;grid-template-columns:.35fr 1fr;gap:40px;margin-bottom:38px}.section-title h2{font-size:clamp(34px,4.4vw,58px);line-height:1.05;letter-spacing:-.05em;margin:0}.section-title p{color:var(--muted);max-width:700px;margin:12px 0 0}.metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}.metric{padding:28px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{font-size:38px;display:block;color:var(--green);letter-spacing:-.05em}.metric span{font-size:13px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.three{grid-template-columns:repeat(3,1fr)}.card{border:1px solid var(--line);background:linear-gradient(150deg,var(--panel2),#080c12);border-radius:15px;padding:25px;transition:.25s}.card:hover{border-color:#314255;transform:translateY(-3px);box-shadow:0 16px 45px #0005}.card h3{margin:0 0 10px;font-size:20px}.card p,.card li{color:var(--muted)}.card ul{padding-left:19px}.tag{display:inline-flex;margin:5px 4px 0 0;padding:5px 9px;border:1px solid #26384a;border-radius:7px;font-size:11px;color:#b9c7d8;background:#0d1722}.profile{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}.identity{min-height:370px;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(circle at 50% 25%,rgba(99,230,190,.14),transparent 33%),linear-gradient(145deg,#101823,#080b10)}.avatar{width:118px;height:118px;border-radius:24px;border:1px solid #314256;display:grid;place-items:center;font-size:38px;font-weight:900;color:var(--green);margin-bottom:auto;background:#0b121c}.identity h3{font-size:30px}.role{color:var(--green);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.expertise .card{min-height:160px}.icon{font-size:23px;margin-bottom:18px;color:var(--green)}.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.skill-card{display:grid;grid-template-columns:52px 1fr;gap:15px;align-items:start}.skill-icon{width:52px;height:52px;border-radius:12px;background:#0c1a18;border:1px solid #21443c;display:grid;place-items:center;color:var(--green);font-weight:900}.timeline{position:relative;padding-left:26px}.timeline:before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:#2a394a}.job{position:relative;margin-bottom:18px}.job:before{content:"";position:absolute;left:-24px;top:30px;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--glow)}.job-head{display:flex;justify-content:space-between;gap:20px}.job h3{font-size:24px}.job .date{font-size:12px;color:var(--green);white-space:nowrap}.case{position:relative;overflow:hidden}.case:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--green),var(--blue))}.case-num{color:var(--green);font:800 11px ui-monospace,monospace;letter-spacing:.12em}.case h3{font-size:22px;margin-top:10px}.case .flow{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font:12px ui-monospace,monospace;color:#b9c7d8}.cert{display:flex;gap:18px;align-items:flex-start}.badge{width:54px;height:54px;border-radius:50%;border:1px solid #2f4a48;display:grid;place-items:center;color:var(--green);background:#0b1917;font-weight:900;flex:none}.contact{text-align:center;padding:110px 0}.contact h2{font-size:clamp(40px,6vw,72px);line-height:1.05;letter-spacing:-.055em;margin:12px auto 18px;max-width:800px}.contact p{color:var(--muted)}footer{border-top:1px solid var(--line);padding:26px 0;color:#758397;font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:20px}.note{font-size:12px;color:#758397}.loader{position:fixed;z-index:99;inset:0;background:#05070b;display:grid;place-items:center;animation:hide .6s ease 1.6s forwards}.load-inner{width:min(500px,80vw)}.load-inner b{display:block;margin-bottom:18px;font-size:20px}.bar{height:3px;background:#17202b;overflow:hidden}.bar:after{content:"";display:block;height:100%;background:var(--green);animation:load 1.4s ease forwards}@keyframes load{from{width:0}to{width:100%}}@keyframes hide{to{opacity:0;visibility:hidden}}@media(max-width:850px){.links{display:none}.hero,.profile,.section-title{grid-template-columns:1fr}.hero{min-height:auto;padding:80px 0}.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.three{grid-template-columns:1fr 1fr}.skills{grid-template-columns:1fr}.section-title{gap:10px}}@media(max-width:560px){.wrap{width:min(100% - 28px,1180px)}section{padding:65px 0}.grid,.three{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.metric{border-right:0!important;border-bottom:1px solid var(--line)!important}.metric:last-child{border-bottom:0!important}.job-head{display:block}.footer-row{display:block}.hero h1{font-size:54px}.console pre{font-size:11px;padding:18px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.loader{display:none}.cursor{animation:none}.card,.btn{transition:none}}
-</style><style>.visual-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.viz-card{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,#0d141f,#080c12);border-radius:18px;padding:26px;min-height:390px}.viz-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.viz-head h3{margin:0}.live{font:700 10px ui-monospace;color:var(--green);letter-spacing:.12em}.arch{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:center;gap:5px;margin-top:36px}.node{min-height:112px;border:1px solid #26384a;border-radius:14px;background:#0a111a;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px}.node small{font-size:10px;color:var(--muted)}.nicon{font-size:25px;margin-bottom:8px}.arrow{height:1px;background:linear-gradient(90deg,var(--blue),var(--green))}.arch-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.mini-node{padding:10px;border:1px dashed #26384a;border-radius:10px;text-align:center;color:#b9c7d8;font:10px ui-monospace}.radar{height:285px;position:relative;display:grid;place-items:center}.ring{position:absolute;border:1px solid #233243;border-radius:50%}.r1{width:110px;height:110px}.r2{width:190px;height:190px}.r3{width:270px;height:270px}.core{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:#0b1917;border:1px solid #2f4a48;color:var(--green);font-weight:900;z-index:2}.orb{position:absolute;padding:7px 10px;border-radius:20px;background:#101722;border:1px solid #2a394a;font-size:10px;z-index:3}.o1{top:8px}.o2{right:5px;top:75px}.o3{right:20px;bottom:48px}.o4{bottom:3px}.o5{left:8px;bottom:58px}.o6{left:2px;top:78px}.flowline{display:grid;grid-template-columns:repeat(6,1fr);margin-top:28px}.step{text-align:center;position:relative}.step-dot{width:46px;height:46px;margin:auto auto 10px;border-radius:50%;border:1px solid #2d4a48;background:#0b1917;color:var(--green);display:grid;place-items:center;font:800 12px ui-monospace}.step b{display:block;font-size:11px}.step small{color:var(--muted);font-size:9px}.bars{display:grid;gap:15px}.barrow{display:grid;grid-template-columns:120px 1fr 45px;gap:12px;align-items:center}.barrow span{font-size:11px}.track{height:9px;border-radius:20px;background:#131e2a;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--green));animation:grow 1.4s ease both;transform-origin:left}.barrow em{font-style:normal;color:var(--green);font:700 11px ui-monospace;text-align:right}@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}.incident-map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.imap-node{min-height:92px;border:1px solid #26384a;border-radius:13px;background:#0a111a;display:grid;place-items:center;text-align:center;padding:10px;font-size:11px}.imap-node strong{display:block;color:var(--green);font-size:18px}.viz-caption{color:var(--muted);font-size:12px;margin-top:18px}@media(max-width:850px){.visual-grid{grid-template-columns:1fr}.arch,.incident-map{grid-template-columns:1fr}.arrow{height:28px;width:1px;margin:auto}.flowline{grid-template-columns:repeat(3,1fr);gap:20px}}</style><style>.ai-fab{position:fixed;right:24px;bottom:24px;z-index:9999;border:1px solid #315a56;background:#0b1917;color:#63e6be;border-radius:999px;padding:14px 18px;font-weight:800;cursor:pointer;box-shadow:0 10px 35px #0008}.ai-panel{position:fixed;right:24px;bottom:86px;width:min(390px,calc(100vw - 32px));height:540px;z-index:9999;background:#091019;border:1px solid #26384a;border-radius:20px;box-shadow:0 25px 80px #000b;display:none;overflow:hidden}.ai-panel.open{display:flex;flex-direction:column}.ai-head{padding:17px 18px;border-bottom:1px solid #1f2d3b;display:flex;justify-content:space-between;align-items:center}.ai-head b{color:#63e6be}.ai-close{background:none;border:0;color:#9fb0c2;font-size:22px;cursor:pointer}.ai-chat{padding:16px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:12px}.msg{max-width:88%;padding:11px 13px;border-radius:14px;font-size:13px;line-height:1.55}.bot{align-self:flex-start;background:#101a25;border:1px solid #24384a}.usr{align-self:flex-end;background:#10251f;border:1px solid #275044}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:#0c141e;border:1px solid #2b3b4c;color:#bdc9d5;padding:7px 9px;border-radius:999px;font-size:10px;cursor:pointer}.ai-form{padding:12px;border-top:1px solid #1f2d3b;display:flex;gap:8px}.ai-form input{flex:1;background:#0c141e;border:1px solid #29394a;color:#e8eef5;border-radius:12px;padding:12px;outline:none}.ai-form button{background:#63e6be;border:0;border-radius:12px;padding:0 14px;font-weight:900;cursor:pointer}.ai-status{font-size:9px;color:#718296;margin-top:3px}</style></head><body>
-<div class="loader"><div class="load-inner"><b>Building Teja's SRE workspace</b><div class="bar"></div></div></div>
-<header class="nav"><nav class="wrap"><a class="brand" href="#home">TA<span>.</span></a><div class="links"><a href="#about">About</a><a href="#impact">Impact</a><a href="#visuals">Visuals</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#cases">Case Studies</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a></div></nav></header>
-<main><div class="wrap"><section class="hero" id="home"><div><div class="eyebrow">Hello, I'm</div><h1>Teja Adapa<small>Site Reliability Engineer</small></h1><p class="lead">I keep production systems reliable through AWS infrastructure, observability, disciplined deployments, and incident response. My work is focused on finding failure paths quickly, restoring service safely, and preventing repeat incidents.</p><div class="btns"><a class="btn primary" href="#cases">Explore my work →</a><a class="btn" href="https://www.linkedin.com/in/tejaadapa" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="mailto:tejaa7048@gmail.com?subject=SRE%20Opportunity">Email me</a></div></div><div class="console"><div class="console-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span>&nbsp; sre@production:~</div><pre>$ whoami
-Teja Adapa — Site Reliability Engineer
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Adapa Venkata Teja — SRE Engineer specializing in AWS, production reliability, incident response, CI/CD, Kubernetes and observability.">
+  <title>Adapa Venkata Teja | SRE Engineer</title>
+  <!-- Teja SRE Portfolio · Version 1.2 -->
+  <style>
+    :root{
+      --bg:#080b14;
+      --bg2:#0c101b;
+      --panel:#1a1a2e;
+      --panel2:#202037;
+      --card:#1e1e33;
+      --text:#ffffff;
+      --muted:#aeb7cc;
+      --muted2:#7e89a5;
+      --line:#333a58;
+      --blue:#3f8cff;
+      --blue2:#5f77ff;
+      --purple:#8b5cf6;
+      --purple2:#7c3aed;
+      --cyan:#67e8f9;
+      --shadow:rgba(0,0,0,.35);
+      --glow:rgba(118,91,255,.35);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      overflow-x:hidden;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.65;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      background:
+        radial-gradient(circle at 18% 8%,rgba(124,58,237,.18),transparent 28%),
+        radial-gradient(circle at 78% 18%,rgba(63,140,255,.12),transparent 26%),
+        radial-gradient(circle at 55% 92%,rgba(139,92,246,.12),transparent 32%),
+        linear-gradient(180deg,#070a12 0%,#0b0f19 48%,#080b14 100%);
+    }
+    .network{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      opacity:.55;
+      background-image:url("data:image/svg+xml,%3Csvg width='1600' height='900' viewBox='0 0 1600 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%236f55e8' stroke-opacity='.28' stroke-width='1.2'%3E%3Cpath d='M20 650L130 540L180 320L305 370L440 610L620 525L790 610L950 510L1120 620L1330 390L1580 450'/%3E%3Cpath d='M80 35L260 85L410 180L620 95L820 120L1010 60L1190 170L1410 90L1590 140'/%3E%3Cpath d='M370 860L500 720L630 760L760 675L890 735L1030 640L1180 710L1370 640'/%3E%3C/g%3E%3Cg fill='%238b5cf6' fill-opacity='.9'%3E%3Ccircle cx='20' cy='650' r='5'/%3E%3Ccircle cx='130' cy='540' r='4'/%3E%3Ccircle cx='180' cy='320' r='5'/%3E%3Ccircle cx='305' cy='370' r='5'/%3E%3Ccircle cx='440' cy='610' r='4'/%3E%3Ccircle cx='620' cy='525' r='5'/%3E%3Ccircle cx='790' cy='610' r='4'/%3E%3Ccircle cx='950' cy='510' r='5'/%3E%3Ccircle cx='1120' cy='620' r='5'/%3E%3Ccircle cx='1330' cy='390' r='5'/%3E%3Ccircle cx='1580' cy='450' r='5'/%3E%3Ccircle cx='80' cy='35' r='4'/%3E%3Ccircle cx='260' cy='85' r='5'/%3E%3Ccircle cx='410' cy='180' r='4'/%3E%3Ccircle cx='620' cy='95' r='4'/%3E%3Ccircle cx='820' cy='120' r='5'/%3E%3Ccircle cx='1010' cy='60' r='4'/%3E%3Ccircle cx='1190' cy='170' r='5'/%3E%3Ccircle cx='1410' cy='90' r='5'/%3E%3Ccircle cx='1590' cy='140' r='4'/%3E%3Ccircle cx='370' cy='860' r='4'/%3E%3Ccircle cx='500' cy='720' r='5'/%3E%3Ccircle cx='630' cy='760' r='4'/%3E%3Ccircle cx='760' cy='675' r='5'/%3E%3Ccircle cx='890' cy='735' r='4'/%3E%3Ccircle cx='1030' cy='640' r='5'/%3E%3Ccircle cx='1180' cy='710' r='5'/%3E%3Ccircle cx='1370' cy='640' r='4'/%3E%3C/g%3E%3C/svg%3E");
+      background-size:cover;
+      background-position:center;
+    }
+    .wrap{width:min(1220px,calc(100% - 48px));margin-inline:auto}
+    a{color:inherit;text-decoration:none}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(8,11,20,.84);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    nav{height:100px;display:flex;align-items:center;justify-content:center;position:relative}
+    .brand{display:none}
+    .version{display:none}
+    .links{display:flex;align-items:center;justify-content:center;gap:34px;color:#aeb7cc;font-size:18px;font-weight:500;width:100%}
+    .links a{position:relative;padding:15px 20px;border-radius:11px;transition:.2s ease;white-space:nowrap}
+    .links a:hover,.links a.active{color:#fff;background:#111a2d}
+    .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-18px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--purple))}
+    .mobile-toggle{display:none;background:#111827;border:1px solid var(--line);color:#fff;border-radius:12px;padding:9px 11px;font-size:18px}
+    main{overflow:hidden}
+    section{padding:92px 0;scroll-margin-top:86px}
+    .hero{min-height:calc(100vh - 78px);display:flex;flex-direction:column;justify-content:center;padding:64px 0 88px}
+    .hero-top{text-align:center;margin-bottom:34px}
+    .hello-line{font-size:clamp(20px,2.2vw,30px);color:#8eb9ff;font-weight:650;letter-spacing:.01em;margin-bottom:8px}
+    .hero-name{font-size:clamp(50px,7.8vw,92px);line-height:1;letter-spacing:-.065em;margin:0;background:linear-gradient(90deg,var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+    .hero-role{font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-.045em;margin:22px 0 24px;color:#fff;font-weight:850}
+    .floating-message{width:min(1120px,100%);margin:8px auto 0;min-height:92px;display:flex;align-items:center;justify-content:center;text-align:center;color:#eef2ff;font-size:clamp(24px,3.1vw,42px);line-height:1.25;font-weight:850;letter-spacing:-.035em;animation:floatMessage 4.2s ease-in-out infinite}
+    .floating-message .typed{display:inline}
+    .floating-message .type-cursor{display:inline-block;width:3px;height:1.15em;margin-left:5px;background:linear-gradient(var(--blue),var(--purple));vertical-align:-.15em;animation:cursorBlink .85s steps(1) infinite}
+    @keyframes cursorBlink{50%{opacity:0}}
+    @keyframes floatMessage{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .eyebrow{display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#68a0ff;background:rgba(63,140,255,.12);border:1px solid rgba(63,140,255,.22);border-radius:16px;padding:8px 18px;font-size:14px;font-weight:800;letter-spacing:.01em}
+    .hero-title{font-size:clamp(46px,7vw,86px);line-height:1.03;letter-spacing:-.065em;margin:22px 0 12px}
+    .hero-title span,.gradient-text{background:linear-gradient(90deg,var(--purple),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:820px;margin:0 auto;color:var(--muted);font-size:clamp(17px,2vw,22px)}
+    .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px}
+    .hero-card,.card,.contact-card{
+      background:linear-gradient(150deg,rgba(32,32,55,.96),rgba(25,25,43,.96));
+      border:1px solid rgba(160,146,255,.2);
+      border-radius:var(--radius);
+      box-shadow:0 22px 70px var(--shadow);
+    }
+    .hero-card{padding:34px 34px 36px;min-height:290px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;transition:.25s ease}
+    .hero-card:hover,.card:hover,.contact-card:hover{transform:translateY(-5px);border-color:rgba(139,92,246,.55);box-shadow:0 26px 80px rgba(0,0,0,.45),0 0 45px rgba(101,76,255,.12)}
+    .icon-box{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,var(--purple),var(--blue));display:grid;place-items:center;font-size:27px;box-shadow:0 18px 35px rgba(96,81,255,.28);flex:none}
+    .hero-card-head{display:flex;align-items:center;gap:20px;margin-bottom:26px}
+    .hero-card h2{font-size:25px;margin:0;letter-spacing:-.035em}
+    .hero-card p{margin:0;text-align:center;align-self:center;color:#d8dbe8;font-size:20px;line-height:1.65;font-weight:560}
+    .cta-row{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:15px;background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;padding:15px 28px;font-weight:900;font-size:16px;box-shadow:0 18px 45px rgba(63,140,255,.18);cursor:pointer;transition:.2s ease;min-height:52px}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(139,92,246,.24)}
+    .btn.secondary{background:#121a2b;border:1px solid rgba(139,92,246,.35);box-shadow:none;color:#dce4ff}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:34px;margin-bottom:34px}
+    .section-title h2{font-size:clamp(34px,4.7vw,58px);line-height:1.06;letter-spacing:-.055em;margin:0}
+    .section-title p{max-width:650px;margin:10px 0 0;color:var(--muted);font-size:17px}
+    .card{padding:28px;transition:.25s ease}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .three{grid-template-columns:repeat(3,1fr)}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+    .metric{padding:26px;background:linear-gradient(150deg,rgba(32,32,55,.95),rgba(20,24,39,.95));border:1px solid rgba(160,146,255,.2);border-radius:22px}
+    .metric strong{display:block;font-size:40px;line-height:1;letter-spacing:-.06em;background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .metric span{display:block;margin-top:10px;color:var(--muted);font-size:14px}
+    .profile{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;align-items:stretch}
+    .identity{min-height:400px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+    .identity::before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.28),transparent 68%);top:-80px;right:-70px}
+    .avatar{position:relative;width:112px;height:112px;border-radius:28px;background:linear-gradient(135deg,var(--purple),var(--blue));display:grid;place-items:center;font-weight:950;font-size:38px;margin-bottom:auto;box-shadow:0 22px 55px rgba(79,70,229,.25)}
+    .role{font-size:13px;letter-spacing:.11em;text-transform:uppercase;color:#82a8ff;font-weight:900;margin-bottom:8px}
+    .identity h3{font-size:34px;line-height:1;margin:0 0 8px;letter-spacing:-.05em}
+    .identity p,.card p,.card li{color:var(--muted)}
+    .expertise{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .mini-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(63,140,255,.25));border:1px solid rgba(139,92,246,.28);font-size:22px;margin-bottom:16px}
+    .card h3{font-size:22px;line-height:1.15;margin:0 0 10px;letter-spacing:-.035em}
+    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .skill-card{display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:start}
+    .skill-icon{width:62px;height:62px;border-radius:18px;background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;font-size:15px;font-weight:950;box-shadow:0 18px 34px rgba(63,140,255,.17)}
+    .tag{display:inline-flex;margin:6px 6px 0 0;padding:6px 10px;border:1px solid rgba(120,128,170,.3);border-radius:999px;background:rgba(10,16,28,.5);font-size:12px;color:#cbd5ee}
+    .ops-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch}
+    .flowline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:16px}
+    .step{text-align:center;position:relative;background:rgba(9,14,26,.48);border:1px solid rgba(120,128,170,.24);border-radius:18px;padding:18px 10px;min-height:116px;display:flex;flex-direction:column;justify-content:center}
+    .step-dot{width:42px;height:42px;margin:0 auto 10px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;font-size:12px;font-weight:950}
+    .step b{font-size:13px}.step small{color:var(--muted2);font-size:11px}
+    .bars{display:grid;gap:18px;margin-top:6px}
+    .barrow{display:grid;grid-template-columns:126px 1fr 50px;gap:12px;align-items:center;color:#dce4f5;font-size:13px}
+    .track{height:10px;border-radius:999px;background:#111827;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
+    .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--purple));transform-origin:left;animation:grow 1.1s ease both}
+    @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .barrow em{font-style:normal;color:#8fb7ff;font-weight:900;font-size:12px;text-align:right}
 
-$ focus --current
-AWS · Production Reliability · Observability
-Incident Response · CI/CD · Kubernetes
+    .orbit-card{margin-top:20px;padding:30px;min-height:470px;overflow:hidden}
+    .orbit-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:12px}
+    .orbit-head h3{margin:0;font-size:22px}
+    .orbit-label{font:900 12px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.10em;color:#63e6be}
+    .orbit-stage{height:350px;position:relative;max-width:760px;margin:4px auto 0;display:grid;place-items:center}
+    .orbit-ring{position:absolute;border:1px solid #28384c;border-radius:50%;pointer-events:none}
+    .orbit-ring.r1{width:116px;height:116px}
+    .orbit-ring.r2{width:226px;height:226px}
+    .orbit-ring.r3{width:330px;height:330px}
+    .orbit-core{position:absolute;width:100px;height:100px;border-radius:50%;display:grid;place-items:center;background:#0a1a18;border:1px solid #31564d;color:#63e6be;font-size:21px;font-weight:950;box-shadow:0 0 35px rgba(99,230,190,.08)}
+    .orbit-pill{position:absolute;padding:9px 14px;border-radius:999px;background:#111827;border:1px solid #33445b;color:#f2f5fb;font-size:12px;line-height:1;box-shadow:0 10px 28px rgba(0,0,0,.18)}
+    .orbit-aws{top:17px;left:50%;transform:translateX(-50%)}
+    .orbit-k8s{right:8%;top:98px}
+    .orbit-datadog{right:10%;bottom:56px}
+    .orbit-terraform{bottom:6px;left:50%;transform:translateX(-50%)}
+    .orbit-jenkins{left:9%;bottom:69px}
+    .orbit-linux{left:8%;top:102px}
 
-$ experience --summary
-4 production applications
-23+ production servers
-200+ deployments
-24/7 on-call operations
+    .timeline{position:relative;padding-left:26px}
+    .timeline::before{content:"";position:absolute;left:7px;top:12px;bottom:12px;width:2px;background:linear-gradient(var(--blue),var(--purple));border-radius:99px}
+    .job{position:relative}
+    .job::before{content:"";position:absolute;left:-27px;top:32px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 0 26px var(--glow)}
+    .job-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:10px}
+    .date{color:#8fb7ff;font-size:13px;font-weight:800;white-space:nowrap}
+    .job ul{margin:16px 0 0;padding-left:20px}
+    .job li{margin-bottom:9px}
+    .cert{display:flex;gap:20px;align-items:flex-start}
+    .badge{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple));font-weight:950;flex:none;box-shadow:0 18px 36px rgba(63,140,255,.16)}
+    .contact{padding:110px 0 100px;text-align:center;position:relative}
+    .contact h2{font-size:clamp(46px,7vw,82px);line-height:1.02;letter-spacing:-.07em;margin:24px auto 18px;max-width:880px}
+    .contact .sub{color:var(--muted);font-size:22px;max-width:680px;margin:0 auto 56px}
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center}
+    .contact-card{padding:38px 24px 28px;min-height:290px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;transition:.25s ease}
+    .contact-icon{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple));font-size:34px;box-shadow:0 20px 45px rgba(79,70,229,.22)}
+    .contact-card h3{font-size:25px;margin:22px 0 8px;letter-spacing:-.04em}
+    .contact-card p{color:var(--muted);font-size:13px;margin:0 0 22px;min-height:42px}
+    .contact-card .btn{width:100%;padding:13px 16px;font-size:15px;min-height:50px}
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:26px 0;color:var(--muted2);font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .ai-fab{position:fixed;right:22px;bottom:22px;z-index:100;border:1px solid rgba(139,92,246,.38);background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border-radius:999px;padding:14px 18px;font-weight:900;cursor:pointer;box-shadow:0 18px 45px rgba(0,0,0,.34)}
+    .ai-panel{position:fixed;right:22px;bottom:84px;width:min(410px,calc(100vw - 28px));height:560px;z-index:100;background:#0d1220;border:1px solid rgba(139,92,246,.35);border-radius:24px;box-shadow:0 30px 95px rgba(0,0,0,.7);display:none;overflow:hidden}
+    .ai-panel.open{display:flex;flex-direction:column}
+    .ai-head{padding:18px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;background:rgba(32,32,55,.85)}
+    .ai-head b{background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:17px}
+    .ai-status{font-size:10px;color:var(--muted2);font-weight:800;letter-spacing:.08em;margin-top:2px}
+    .ai-close{background:none;border:0;color:#c6cce0;font-size:28px;cursor:pointer;line-height:1}
+    .ai-chat{padding:16px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:12px}
+    .msg{max-width:88%;padding:12px 14px;border-radius:16px;font-size:13px;line-height:1.55}
+    .bot{align-self:flex-start;background:#171d2d;border:1px solid rgba(160,146,255,.18)}
+    .usr{align-self:flex-end;background:linear-gradient(135deg,rgba(63,140,255,.22),rgba(139,92,246,.22));border:1px solid rgba(139,92,246,.28)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:#111827;border:1px solid rgba(139,92,246,.25);color:#cbd5ee;padding:8px 10px;border-radius:999px;font-size:11px;cursor:pointer;font-weight:800}
+    .ai-form{padding:12px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:8px;background:#0b101c}
+    .ai-form input{flex:1;background:#111827;border:1px solid rgba(139,92,246,.28);color:#fff;border-radius:14px;padding:13px;outline:none}
+    .ai-form button{background:linear-gradient(135deg,var(--blue),var(--purple));border:0;color:#fff;border-radius:14px;padding:0 16px;font-weight:950;cursor:pointer}
+    .loader{position:fixed;z-index:200;inset:0;background:#080b14;display:grid;place-items:center;animation:hideLoader .55s ease 1.15s forwards}
+    .load-inner{width:min(420px,80vw);text-align:center}.load-inner b{display:block;margin-bottom:16px}.load-bar{height:4px;background:#121827;border-radius:99px;overflow:hidden}.load-bar::after{content:"";display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));animation:load 1s ease forwards}@keyframes load{from{width:0}to{width:100%}}@keyframes hideLoader{to{opacity:0;visibility:hidden}}
+    @media(max-width:980px){
+      .hero-cards,.three,.contact-grid{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:repeat(2,1fr)}.profile,.ops-grid{grid-template-columns:1fr}.flowline{grid-template-columns:repeat(3,1fr)}.orbit-stage{max-width:680px}nav{justify-content:flex-end}.links{position:absolute;left:24px;right:24px;top:88px;width:auto;display:none;flex-direction:column;align-items:stretch;gap:4px;background:#111827;border:1px solid var(--line);border-radius:20px;padding:14px}.links.open{display:flex}.links a{padding:12px 14px}.links a.active::after{display:none}.mobile-toggle{display:block}.section-title{display:block}.section-title p{margin-top:14px}.contact-card{min-height:260px}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(100% - 30px,1220px)}nav{height:70px}.hero{padding:45px 0 72px}.floating-message{font-size:clamp(22px,7vw,32px);min-height:130px}.orbit-card{padding:22px 14px;min-height:410px}.orbit-head{align-items:flex-start}.orbit-stage{height:300px}.orbit-ring.r1{width:96px;height:96px}.orbit-ring.r2{width:176px;height:176px}.orbit-ring.r3{width:250px;height:250px}.orbit-core{width:84px;height:84px}.orbit-pill{font-size:10px;padding:8px 10px}.orbit-k8s{right:0;top:76px}.orbit-datadog{right:0;bottom:54px}.orbit-jenkins{left:0;bottom:60px}.orbit-linux{left:0;top:80px}.hero-cards,.grid,.three,.metrics,.skills,.expertise,.contact-grid{grid-template-columns:1fr}.hero-card{min-height:auto;padding:28px}.hero-card p{text-align:left;font-size:17px}.hero-card-head{margin-bottom:18px}.icon-box{width:56px;height:56px}.cta-row{gap:12px}.btn{width:100%;padding:14px 18px}.skill-card{grid-template-columns:1fr}.job-head{display:block}.flowline{grid-template-columns:1fr}.barrow{grid-template-columns:1fr;gap:8px}.barrow em{text-align:left}.contact h2{font-size:45px}.contact .sub{font-size:17px}.footer-row{display:block;text-align:center}.ai-fab{right:14px;bottom:14px}.ai-panel{right:14px;bottom:76px;height:520px}.version{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.loader{display:none}.hero-card,.card,.contact-card,.btn{transition:none}.fill,.floating-message,.type-cursor{animation:none}}
+  </style>
+</head>
+<body>
+  <div class="network" aria-hidden="true"></div>
+  <div class="loader"><div class="load-inner"><b>Preparing Teja SRE Portfolio</b><div class="load-bar"></div></div></div>
 
-$ status
-ready_for_next_challenge <span class="cursor"></span></pre></div></section>
-<section id="about"><div class="section-title"><div class="eyebrow">About Me</div><div><h2>Reliability isn't a dashboard. It's an operating discipline.</h2><p>I work across infrastructure, applications, monitoring and release operations to understand what is failing, what users are experiencing, and what action restores the service with the least risk.</p></div></div><div class="profile"><div class="card identity"><div class="avatar">TA</div><div class="role">Site Reliability Engineer</div><h3>Teja Adapa</h3><p>Bengaluru, India</p></div><div class="grid expertise"><div class="card"><div class="icon">⌁</div><h3>Production Reliability</h3><p>P1/P2 response, service restoration, health validation, RCA and post-incident actions.</p></div><div class="card"><div class="icon">☁</div><h3>AWS Operations</h3><p>EC2, load balancing, Auto Scaling, VPC, IAM, CloudWatch, Lambda, Glue, S3 and related services.</p></div><div class="card"><div class="icon">◫</div><h3>CI/CD & Change</h3><p>Jenkins-driven deployments, Terraform workflows, smoke checks, multi-region releases and rollback readiness.</p></div><div class="card"><div class="icon">⌁</div><h3>Observability</h3><p>Datadog, CloudWatch, Prometheus and Grafana for metrics, logs, dashboards, alerting and troubleshooting.</p></div></div></div></section>
-<section id="impact"><div class="section-title"><div class="eyebrow">Impact Delivered</div><div><h2>Results from production operations.</h2><p>Concrete scale and outcomes from my SRE responsibilities.</p></div></div><div class="metrics"><div class="metric"><strong>200+</strong><span>Production deployments executed</span></div><div class="metric"><strong>23+</strong><span>Production servers supported</span></div><div class="metric"><strong>4</strong><span>Production applications supported</span></div><div class="metric"><strong>~30%</strong><span>Reported alert-noise reduction through Datadog improvements</span></div></div></section>
-<section id="visuals"><div class="section-title"><div class="eyebrow">SRE Visual Map</div><div><h2>See how I operate production.</h2><p>A visual view of the systems, signals and incident-response flow behind my day-to-day SRE work.</p></div></div><div class="visual-grid"><div class="viz-card"><div class="viz-head"><h3>Production request path</h3><span class="live">SYSTEM VIEW</span></div><div class="arch"><div class="node"><div class="nicon">🌐</div><b>Client / API</b><small>HTTPS traffic</small></div><div class="arrow"></div><div class="node"><div class="nicon">⚖️</div><b>AWS ALB</b><small>Health checks · routing</small></div><div class="arrow"></div><div class="node"><div class="nicon">☸</div><b>App Layer</b><small>EC2 / Kubernetes / Tomcat</small></div></div><div class="arch-bottom"><div class="mini-node">🔎 Elasticsearch<br>search dependency</div><div class="mini-node">λ Lambda / SFTP<br>integration</div><div class="mini-node">☁ CloudWatch + Datadog<br>metrics · logs · alerts</div></div><p class="viz-caption">Illustrative architecture only; not confidential client infrastructure.</p></div><div class="viz-card"><div class="viz-head"><h3>Reliability engineering orbit</h3><span class="live">CORE STACK</span></div><div class="radar"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="core">SRE</div><div class="orb o1">AWS</div><div class="orb o2">Kubernetes</div><div class="orb o3">Datadog</div><div class="orb o4">Terraform</div><div class="orb o5">Jenkins</div><div class="orb o6">Linux</div></div></div></div><div class="viz-card" style="margin-top:18px;min-height:auto"><div class="viz-head"><h3>Incident response lifecycle</h3><span class="live">PRODUCTION FLOW</span></div><div class="flowline"><div class="step"><div class="step-dot">01</div><b>Detect</b><small>alert / impact</small></div><div class="step"><div class="step-dot">02</div><b>Triage</b><small>scope & severity</small></div><div class="step"><div class="step-dot">03</div><b>Correlate</b><small>metrics · logs</small></div><div class="step"><div class="step-dot">04</div><b>Mitigate</b><small>restore safely</small></div><div class="step"><div class="step-dot">05</div><b>Validate</b><small>smoke / E2E</small></div><div class="step"><div class="step-dot">06</div><b>Prevent</b><small>RCA · tuning</small></div></div></div><div class="visual-grid" style="margin-top:18px"><div class="viz-card" style="min-height:330px"><div class="viz-head"><h3>Production footprint</h3><span class="live">EXPERIENCE</span></div><div class="bars"><div class="barrow"><span>Deployments</span><div class="track"><div class="fill" style="width:100%"></div></div><em>200+</em></div><div class="barrow"><span>Prod servers</span><div class="track"><div class="fill" style="width:78%"></div></div><em>23+</em></div><div class="barrow"><span>PPE servers</span><div class="track"><div class="fill" style="width:68%"></div></div><em>~20</em></div><div class="barrow"><span>Applications</span><div class="track"><div class="fill" style="width:52%"></div></div><em>4</em></div><div class="barrow"><span>Alert reduction</span><div class="track"><div class="fill" style="width:60%"></div></div><em>~30%</em></div></div></div><div class="viz-card" style="min-height:330px"><div class="viz-head"><h3>Real incident chain</h3><span class="live">CASE STUDY</span></div><div class="incident-map"><div class="imap-node"><div><strong>01</strong>Heavy ES workload</div></div><div class="imap-node"><div><strong>02</strong>Search latency</div></div><div class="imap-node"><div><strong>03</strong>Tomcat threads busy</div></div><div class="imap-node"><div><strong>04</strong>ALB health failures</div></div><div class="imap-node"><div><strong>05</strong>App impact</div></div></div><p class="viz-caption">A real dependency chain from one of my production incidents.</p></div></div></section><section id="skills"><div class="section-title"><div class="eyebrow">Technical Expertise</div><div><h2>Tools I use to operate production.</h2><p>A production-focused stack spanning cloud infrastructure, delivery, containers, observability, systems and incident management.</p></div></div><div class="skills"><div class="card skill-card"><div class="skill-icon">AWS</div><div><h3>Cloud & Infrastructure</h3><p>AWS, OCI, EC2, EBS, ALB/NLB, Auto Scaling, VPC, IAM, Route 53, Lambda, S3, RDS, DynamoDB, Glue, WAF.</p></div></div><div class="card skill-card"><div class="skill-icon">K8s</div><div><h3>Containers & Orchestration</h3><p>Docker, Kubernetes, EKS, pods, health probes, HPA, CrashLoopBackOff and application reachability troubleshooting.</p></div></div><div class="card skill-card"><div class="skill-icon">CI</div><div><h3>CI/CD & Infrastructure as Code</h3><p>Jenkins, Terraform, GitHub Actions, Argo CD, Git, Maven, CloudFormation and deployment pipelines.</p></div></div><div class="card skill-card"><div class="skill-icon">OBS</div><div><h3>Observability</h3><p>Datadog, CloudWatch, Prometheus, Grafana, ELK, APM concepts, SLI/SLO, error budgets and alert tuning.</p></div></div><div class="card skill-card"><div class="skill-icon">LIN</div><div><h3>Systems & Data</h3><p>Linux, Bash, PowerShell, MySQL, Elasticsearch, Tomcat, networking diagnostics and service troubleshooting.</p></div></div><div class="card skill-card"><div class="skill-icon">OPS</div><div><h3>Production Operations</h3><p>Incident response, RCA, on-call, ServiceNow, CAB/change management, runbooks, smoke testing and DR support.</p></div></div></div></section>
-<section id="experience"><div class="section-title"><div class="eyebrow">Work Experience</div><div><h2>Operating enterprise production systems.</h2><p>Hands-on SRE work supporting business-critical applications and infrastructure.</p></div></div><div class="timeline"><article class="card job"><div class="job-head"><div><div class="role">Tata Consultancy Services · LSEG client engagement</div><h3>Site Reliability Engineer</h3></div><div class="date">Production & PPE · On-call</div></div><ul><li>Support 4 production applications across 23+ production servers and approximately 20 pre-production servers.</li><li>Executed 200+ deployments with approvals, regional coordination, smoke checks, end-to-end validation and closure activities.</li><li>Respond to incidents involving application availability, API latency, Elasticsearch, Tomcat thread saturation, ALB/target health, serverless integrations and CI/CD failures.</li><li>Use Datadog and AWS CloudWatch to investigate service health, logs, metrics and alerts; contributed to monitoring improvements that reduced reported alert noise by about 30%.</li><li>Participate in 24/7 on-call, problem management, RCA, runbook/SOP documentation, DR activities and cross-team production recovery.</li></ul><div><span class="tag">AWS</span><span class="tag">Datadog</span><span class="tag">Jenkins</span><span class="tag">Terraform</span><span class="tag">Kubernetes</span><span class="tag">Elasticsearch</span><span class="tag">ServiceNow</span></div></article></div></section>
-<section id="cases"><div class="section-title"><div class="eyebrow">Production Case Studies</div><div><h2>Failures are where SRE becomes visible.</h2><p>Selected anonymized incidents showing the troubleshooting path, remediation and validation. Internal identifiers, proprietary architecture and customer data are intentionally excluded.</p></div></div><div class="grid"><article class="card case"><div class="case-num">01 / APPLICATION AVAILABILITY</div><h3>Elasticsearch latency → Tomcat saturation → ALB health failures</h3><p>Heavy Elasticsearch workload slowed search requests. Requests remained active, Tomcat threads became occupied, and load-balancer health checks intermittently failed, making the application unresponsive.</p><p><b>Action:</b> Correlated the search dependency with application health, supported mapping/configuration changes, data reindexing and a controlled hotfix rollout.</p><div class="flow">SEARCH LATENCY → THREAD EXHAUSTION → UNHEALTHY TARGETS → HOTFIX → VALIDATION</div></article><article class="card case"><div class="case-num">02 / PRODUCTION HOTFIX</div><h3>Multi-region recovery after degraded matching functionality</h3><p>Following migration, matching performance was degraded and some requests returned no match. The remediation included mapping changes, matcher configuration updates, ASG health-grace adjustments and AWS Glue data reimport.</p><p><b>Outcome:</b> Deployment completed in both production regions, smoke checks passed, restored data was validated and user sign-off was received.</p><div class="flow">CHANGE → REGION 1 → SMOKE CHECK → REGION 2 → DATA VALIDATION → SIGN-OFF</div></article><article class="card case"><div class="case-num">03 / SERVERLESS INTEGRATION</div><h3>SFTP delivery stopped after a runtime change</h3><p>Users reported files were no longer landing after a runtime update. Investigation identified an SFTP Lambda layer that had not been updated to the compatible version.</p><p><b>Action:</b> Coordinated the corrected layer through lower environments and production, with validation at each stage.</p><div class="flow">USER IMPACT → LAMBDA CHECK → LAYER MISMATCH → HOTFIX → FILE FLOW VALIDATION</div></article><article class="card case"><div class="case-num">04 / INFRASTRUCTURE DEPLOYMENT</div><h3>Terraform apply stalled during a release</h3><p>A Terraform apply remained in progress while CloudWatch alarm resources refreshed. With the primary deployment contact unavailable, the pipeline and resource state had to be monitored carefully before continuing.</p><p><b>Outcome:</b> The first region completed successfully and smoke checks were confirmed before proceeding with the second region.</p><div class="flow">APPLY STALL → RESOURCE STATE → MONITOR → REGION COMPLETE → SMOKE CHECK → CONTINUE</div></article><article class="card case"><div class="case-num">05 / CI/CD RELIABILITY</div><h3>Jenkins agent waiting for an executor</h3><p>A deployment pipeline remained queued while the Jenkins node toggled offline and reported memory pressure. Disk state and executor availability were checked while the agent condition was investigated.</p><p><b>Focus:</b> Restore agent capacity safely and avoid treating a scheduling symptom as an application deployment failure.</p><div class="flow">QUEUE → NODE HEALTH → EXECUTORS → MEMORY → AGENT RECOVERY</div></article><article class="card case"><div class="case-num">06 / ALERT QUALITY</div><h3>WAF alerts creating repeated operational incidents</h3><p>Repeated WAF detections generated operational noise while the security signal still needed to be preserved. Legitimate traffic required validation and whitelisting without weakening cyber-threat visibility.</p><p><b>Approach:</b> Coordinate with the network/security team, separate legitimate requests from threats and tune the operational response path.</p><div class="flow">WAF SIGNAL → VALIDATE IP → SECURITY REVIEW → WHITELIST LEGITIMATE → RETAIN VISIBILITY</div></article></div></section>
-<section id="credentials"><div class="section-title"><div class="eyebrow">Credentials</div><div><h2>Continuous cloud learning.</h2><p>Certifications and structured training supporting my production experience.</p></div></div><div class="grid"><div class="card cert"><div class="badge">OCI</div><div><h3>OCI 2025 Certified Foundations Associate</h3><p>Oracle Cloud Infrastructure foundations credential. Valid through October 2027.</p><span class="tag">Cloud</span><span class="tag">Certified</span></div></div><div class="card cert"><div class="badge">AWS</div><div><h3>AWS Cloud Practitioner Essentials</h3><p>Completed through AWS Skill Builder, covering AWS cloud concepts and foundational services.</p><span class="tag">AWS Skill Builder</span></div></div><div class="card cert"><div class="badge">EDU</div><div><h3>B.Tech — Electronics & Communication Engineering</h3><p>Kalasalingam University · CGPA 7.35</p><span class="tag">Engineering</span></div></div><div class="card cert"><div class="badge">SRE</div><div><h3>Production Engineering Practice</h3><p>Hands-on experience across deployment operations, observability, incident response, change management and reliability troubleshooting.</p><span class="tag">On-call</span><span class="tag">RCA</span></div></div></div></section>
-<section class="contact" id="contact"><div class="eyebrow">Let's Connect</div><h2>Building systems that stay reliable when it matters.</h2><p>Open to Site Reliability Engineering, Production Reliability and Platform Engineering opportunities.</p><div class="btns" style="justify-content:center"><a class="btn primary" href="mailto:tejaa7048@gmail.com?subject=SRE%20Opportunity">tejaa7048@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/tejaadapa" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="Teja_Resume.pdf" target="_blank" rel="noopener">Resume ↓</a></div><p class="note" style="margin-top:20px"></p></section></div></main><footer><div class="wrap footer-row"><span>© <span id="year"></span> Teja Adapa</span><span>Site Reliability Engineer · Bengaluru, India</span></div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();</script><button class="ai-fab" id="aiFab">✦ Ask Teja AI</button><aside class="ai-panel" id="aiPanel"><div class="ai-head"><div><b>✦ Teja AI</b><div class="ai-status">PORTFOLIO ASSISTANT · VERIFIED PROFILE DATA</div></div><button class="ai-close" id="aiClose">×</button></div><div class="ai-chat" id="aiChat"><div class="msg bot">Hi — I’m Teja’s portfolio assistant. Ask me about his SRE experience, AWS work, production incidents, deployments, monitoring, certifications or availability.</div><div class="chips"><button class="chip">Tell me about Teja</button><button class="chip">Production incidents</button><button class="chip">AWS experience</button><button class="chip">Monitoring experience</button><button class="chip">Why SRE?</button><button class="chip">Certifications</button></div></div><form class="ai-form" id="aiForm"><input id="aiInput" autocomplete="off" placeholder="Ask about Teja's SRE experience…"><button>↑</button></form></aside><script>
-const fab=document.getElementById('aiFab'),panel=document.getElementById('aiPanel'),closeAI=document.getElementById('aiClose'),chat=document.getElementById('aiChat'),form=document.getElementById('aiForm'),input=document.getElementById('aiInput');fab.onclick=()=>panel.classList.toggle('open');closeAI.onclick=()=>panel.classList.remove('open');
-const answers={about:"Teja is a Site Reliability Engineer with about 2.6 years of experience supporting enterprise production systems. He supports 4 applications, 23+ production servers and ~20 PPE servers, has executed 200+ deployments, and participates in production incident response and on-call operations.",incident:"A representative incident involved heavy Elasticsearch workload causing search latency. Requests remained active, Tomcat threads became saturated, ALB health checks started failing and the application became unresponsive. Teja supported investigation, remediation, reindexing, controlled deployment and post-change validation.",aws:"Teja has hands-on AWS experience across EC2, EBS, ALB/NLB, Auto Scaling, VPC, IAM, Route 53, CloudWatch, Lambda, EventBridge, DynamoDB, RDS, ECR, EKS, S3, SSM, Glue, WAF, ACM and CloudFormation.",monitor:"Teja works with Datadog, AWS CloudWatch, Prometheus, Grafana and ELK concepts for metrics, logs, dashboards, alerting and troubleshooting. His monitoring improvements contributed to about a 30% reduction in reported alert noise.",sre:"Teja’s experience is centered on production reliability: deployments, on-call support, incident triage, RCA, observability, infrastructure troubleshooting, change management, smoke checks, DR support and cross-team recovery.",cert:"Teja holds the OCI 2025 Certified Foundations Associate credential, valid through October 2027, and has completed AWS Cloud Practitioner Essentials through AWS Skill Builder.",deploy:"Teja has executed 200+ deployments, including production change coordination, regional rollouts, smoke checks, end-to-end validation, rollback awareness and closure activities.",contact:"You can contact Teja at tejaa7048@gmail.com or through LinkedIn at linkedin.com/in/tejaadapa."};
-function reply(q){q=q.toLowerCase();if(q.includes('incident')||q.includes('production issue')||q.includes('difficult'))return answers.incident;if(q.includes('aws')||q.includes('cloud'))return answers.aws;if(q.includes('monitor')||q.includes('datadog')||q.includes('observ'))return answers.monitor;if(q.includes('cert'))return answers.cert;if(q.includes('deploy'))return answers.deploy;if(q.includes('contact')||q.includes('email')||q.includes('linkedin'))return answers.contact;if(q.includes('why')&&q.includes('sre'))return answers.sre;if(q.includes('about')||q.includes('tell me')||q.includes('experience'))return answers.about;return "I can answer from Teja’s verified portfolio data. Try asking about AWS, production incidents, deployments, monitoring, SRE responsibilities, certifications or contact details."}
-function ask(q){if(!q.trim())return;chat.insertAdjacentHTML('beforeend','<div class="msg usr"></div>');chat.lastElementChild.textContent=q;setTimeout(()=>{chat.insertAdjacentHTML('beforeend','<div class="msg bot"></div>');chat.lastElementChild.textContent=reply(q);chat.scrollTop=chat.scrollHeight},350);chat.scrollTop=chat.scrollHeight}
-form.onsubmit=e=>{e.preventDefault();ask(input.value);input.value=''};document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>ask(c.textContent));
-</script>
-<div id="contact-direct" style="position:fixed;left:18px;bottom:18px;z-index:40;background:#0b1119;border:1px solid #26384a;border-radius:14px;padding:10px 14px;font:12px ui-monospace,monospace;box-shadow:0 12px 35px rgba(0,0,0,.28)">
-  <a href="mailto:tejaa7048@gmail.com" style="color:#dbe7f3;text-decoration:none">✉ tejaa7048@gmail.com</a>
-  <span style="color:#526272;margin:0 8px">•</span>
-  <a href="tel:8555061018" style="color:#dbe7f3;text-decoration:none">☎ 8555061018</a>
-</div>
-</body></html>
+  <header class="nav">
+    <nav class="wrap">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="logo">TA</span>
+        <span class="brand-name">Teja Adapa</span>
+        
+      </a>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <div class="links" id="navLinks">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#product">Product</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#credentials">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-top">
+          <div class="hello-line">Hello, I'm</div>
+          <h1 class="hero-name">Adapa Venkata Teja</h1>
+          <div class="hero-role">SRE Engineer</div>
+          <div class="floating-message" aria-label="SRE focus message"><span class="typed" id="typedMessage"></span><span class="type-cursor" aria-hidden="true"></span></div>
+        </div>
+
+        <div class="hero-cards">
+          <article class="hero-card">
+            <div class="hero-card-head"><div class="icon-box">👤</div><h2>About Me</h2></div>
+            <p>Site Reliability Engineer with 2.6+ years of experience supporting production applications, cloud infrastructure, deployments and on-call operations.</p>
+          </article>
+          <article class="hero-card">
+            <div class="hero-card-head"><div class="icon-box">★</div><h2>What I Do</h2></div>
+            <p>Operate AWS systems, troubleshoot incidents, support CI/CD releases, monitor service health and improve reliability through observability and RCA.</p>
+          </article>
+          <article class="hero-card">
+            <div class="hero-card-head"><div class="icon-box">♥</div><h2>What Drives Me</h2></div>
+            <p>I enjoy solving production challenges, reducing operational risk and building reliable systems that help teams move faster with confidence.</p>
+          </article>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="#contact">Get In Touch →</a>
+          <button class="btn" type="button" id="openAiFromHero">Ask Teja AI 🤖 →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-title">
+          <div><div class="eyebrow">About Me</div><h2>Reliability is not only monitoring. It is how production is operated.</h2></div>
+          <p>With 2.6+ years of hands-on SRE experience, I work across infrastructure, application health, release validation and incident response to understand what is failing, restore service safely and reduce repeat incidents.</p>
+        </div>
+        <div class="profile">
+          <div class="card identity">
+            <div class="avatar">TA</div>
+            <div class="role">Site Reliability Engineer</div>
+            <h3>Teja Adapa</h3>
+            <p>Bengaluru, India · AWS · Kubernetes · CI/CD · Observability · Production Support</p>
+          </div>
+          <div class="expertise">
+            <div class="card"><div class="mini-icon">⚡</div><h3>Production Reliability</h3><p>P1/P2 support, on-call response, service restoration, smoke validation, RCA and post-incident follow-ups.</p></div>
+            <div class="card"><div class="mini-icon">☁️</div><h3>AWS Operations</h3><p>Hands-on work with EC2, ALB/NLB, Auto Scaling, VPC, IAM, CloudWatch, Lambda, Glue, S3, RDS, WAF and related services.</p></div>
+            <div class="card"><div class="mini-icon">🔁</div><h3>CI/CD & Change</h3><p>Jenkins deployments, Terraform workflows, regional rollout coordination, rollback awareness and controlled release closures.</p></div>
+            <div class="card"><div class="mini-icon">📈</div><h3>Observability</h3><p>Datadog, CloudWatch, Prometheus and Grafana for dashboards, alerts, logs, metrics and troubleshooting signals.</p></div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>200+</strong><span>Production deployments executed</span></div>
+          <div class="metric"><strong>30+</strong><span>Production servers supported</span></div>
+          <div class="metric"><strong>4</strong><span>Owned production reliability and operational support for 4 business-critical applications</span></div>
+          <div class="metric"><strong>~30%</strong><span>Alert-noise reduction through Datadog improvements</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-title">
+          <div><div class="eyebrow">Technical Expertise</div><h2>Tools I use to operate production.</h2></div>
+          <p>A practical SRE stack covering cloud infrastructure, containers, delivery, monitoring, Linux, incident response and production operations.</p>
+        </div>
+        <div class="skills">
+          <div class="card skill-card"><div class="skill-icon">AWS</div><div><h3>Cloud & Infrastructure</h3><p>AWS, OCI, EC2, EBS, ALB/NLB, Auto Scaling, VPC, IAM, Route 53, CloudWatch, Lambda, S3, RDS, DynamoDB, Glue, WAF and CloudFormation.</p></div></div>
+          <div class="card skill-card"><div class="skill-icon">K8s</div><div><h3>Containers & Orchestration</h3><p>Docker, Kubernetes, EKS, pods, health probes, HPA, CrashLoopBackOff and application reachability troubleshooting.</p></div></div>
+          <div class="card skill-card"><div class="skill-icon">CI</div><div><h3>CI/CD & IaC</h3><p>Jenkins, Terraform, GitHub Actions, Argo CD, Git, Maven, CloudFormation, deployment pipelines and change validation.</p></div></div>
+          <div class="card skill-card"><div class="skill-icon">OBS</div><div><h3>Observability</h3><p>Datadog, CloudWatch, Prometheus, Grafana, ELK concepts, SLI/SLO, error budgets, dashboards and alert tuning.</p></div></div>
+          <div class="card skill-card"><div class="skill-icon">LIN</div><div><h3>Systems & Data</h3><p>Linux, Bash, PowerShell, MySQL, Elasticsearch, Tomcat, networking checks and service troubleshooting.</p></div></div>
+          <div class="card skill-card"><div class="skill-icon">OPS</div><div><h3>Production Operations</h3><p>Incident response, RCA, ServiceNow, CAB/change management, runbooks, smoke testing, DR support and cross-team recovery.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product">
+      <div class="wrap">
+        <div class="section-title">
+          <div><div class="eyebrow">SRE Operating Model</div><h2>How I handle production work.</h2></div>
+          
+        </div>
+        <div class="ops-grid">
+          <div class="card">
+            <h3>Incident response lifecycle</h3>
+            <div class="flowline">
+              <div class="step"><div class="step-dot">01</div><b>Detect</b><small>alert / impact</small></div>
+              <div class="step"><div class="step-dot">02</div><b>Triage</b><small>scope & severity</small></div>
+              <div class="step"><div class="step-dot">03</div><b>Correlate</b><small>metrics · logs</small></div>
+              <div class="step"><div class="step-dot">04</div><b>Mitigate</b><small>restore safely</small></div>
+              <div class="step"><div class="step-dot">05</div><b>Validate</b><small>smoke / E2E</small></div>
+              <div class="step"><div class="step-dot">06</div><b>Prevent</b><small>RCA · tuning</small></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Production footprint</h3>
+            <div class="bars">
+              <div class="barrow"><span>Deployments</span><div class="track"><div class="fill" style="width:100%"></div></div><em>200+</em></div>
+              <div class="barrow"><span>Prod servers</span><div class="track"><div class="fill" style="width:88%"></div></div><em>30+</em></div>
+              <div class="barrow"><span>PPE servers</span><div class="track"><div class="fill" style="width:68%"></div></div><em>~20</em></div>
+              <div class="barrow"><span>Applications</span><div class="track"><div class="fill" style="width:52%"></div></div><em>4</em></div>
+              <div class="barrow"><span>Alert tuning</span><div class="track"><div class="fill" style="width:60%"></div></div><em>~30%</em></div>
+            </div>
+          </div>
+        </div>
+        <div class="card orbit-card">
+          <div class="orbit-head">
+            <h3>Reliability engineering orbit</h3>
+            <span class="orbit-label">CORE STACK</span>
+          </div>
+          <div class="orbit-stage" aria-label="Reliability engineering core stack">
+            <div class="orbit-ring r1"></div>
+            <div class="orbit-ring r2"></div>
+            <div class="orbit-ring r3"></div>
+            <div class="orbit-core">SRE</div>
+            <span class="orbit-pill orbit-aws">AWS</span>
+            <span class="orbit-pill orbit-k8s">Kubernetes</span>
+            <span class="orbit-pill orbit-datadog">Datadog</span>
+            <span class="orbit-pill orbit-terraform">Terraform</span>
+            <span class="orbit-pill orbit-jenkins">Jenkins</span>
+            <span class="orbit-pill orbit-linux">Linux</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-title">
+          <div><div class="eyebrow">Work Experience</div><h2>Operating enterprise production systems.</h2></div>
+          <p>Hands-on SRE work supporting business-critical applications, release operations, monitoring and incident response.</p>
+        </div>
+        <div class="timeline">
+          <article class="card job">
+            <div class="job-head">
+              <div><div class="role">Tata Consultancy Services · LSEG client engagement</div><h3>Site Reliability Engineer</h3></div>
+              <div class="date">Production & PPE · On-call</div>
+            </div>
+            <ul>
+              <li>Support 4 production applications across 30+ production servers and approximately 20 pre-production servers.</li>
+              <li>Executed 200+ deployments with approvals, regional coordination, smoke checks, end-to-end validation and closure activities.</li>
+              <li>Respond to production issues involving application availability, API latency, Elasticsearch, Tomcat thread saturation, ALB/target health, serverless integrations and CI/CD failures.</li>
+              <li>Use Datadog and AWS CloudWatch to investigate service health, logs, metrics and alerts; contributed to monitoring improvements that reduced reported alert noise by about 30%.</li>
+              <li>Participate in 24/7 on-call, problem management, RCA, runbook/SOP documentation, DR activities and cross-team production recovery.</li>
+            </ul>
+            <div><span class="tag">AWS</span><span class="tag">Datadog</span><span class="tag">Jenkins</span><span class="tag">Terraform</span><span class="tag">Kubernetes</span><span class="tag">Elasticsearch</span><span class="tag">ServiceNow</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials">
+      <div class="wrap">
+        <div class="section-title">
+          <div><div class="eyebrow">Certifications</div><h2>Cloud learning plus production practice.</h2></div>
+          <p>Certifications and structured learning supporting hands-on SRE and cloud operations experience.</p>
+        </div>
+        <div class="grid">
+          <div class="card cert"><div class="badge">OCI</div><div><h3>OCI 2025 Certified Foundations Associate</h3><p>Oracle Cloud Infrastructure foundations credential. Valid through October 2027.</p><span class="tag">Cloud</span><span class="tag">Certified</span></div></div>
+          <div class="card cert"><div class="badge">AWS</div><div><h3>AWS Cloud Practitioner Essentials</h3><p>Completed through AWS Skill Builder, covering AWS cloud concepts and foundational services.</p><span class="tag">AWS Skill Builder</span></div></div>
+          <div class="card cert"><div class="badge">EDU</div><div><h3>B.Tech — Electronics & Communication Engineering</h3><p>Kalasalingam University · CGPA 7.35</p><span class="tag">Engineering</span></div></div>
+          <div class="card cert"><div class="badge">SRE</div><div><h3>Production Engineering Practice</h3><p>Hands-on experience across deployments, observability, incident response, change management and reliability troubleshooting.</p><span class="tag">On-call</span><span class="tag">RCA</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">↳ Let's Connect</div>
+        <h2>Ready to build <span class="gradient-text">something reliable?</span></h2>
+        <p class="sub">Open to Site Reliability Engineering, Production Reliability and Platform Engineering opportunities.</p>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <div><div class="contact-icon">✉️</div><h3>Email</h3><p>Reach out for SRE and production reliability opportunities.</p></div>
+            <a class="btn" href="mailto:tejaa7048@gmail.com?subject=SRE%20Opportunity">Send Email</a>
+          </article>
+          <article class="contact-card">
+            <div><div class="contact-icon">in</div><h3>LinkedIn</h3><p>Connect with Teja Adapa on LinkedIn.</p></div>
+            <a class="btn" href="https://www.linkedin.com/in/tejaadapa" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          </article>
+          <article class="contact-card">
+            <div><div class="contact-icon">⌘</div><h3>GitHub</h3><p>View portfolio repository and GitHub profile.</p></div>
+            <a class="btn" href="https://github.com/Teja-2562304" target="_blank" rel="noopener">View on GitHub</a>
+          </article>
+          <article class="contact-card">
+            <div><div class="contact-icon">📄</div><h3>Resume</h3><p>Open the latest resume attached to this portfolio.</p></div>
+            <a class="btn" href="Teja_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          </article>
+        </div>
+        <p style="color:var(--muted);margin-top:28px">Phone: <a href="tel:8555061018">8555061018</a> · Email: <a href="mailto:tejaa7048@gmail.com">tejaa7048@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> Teja Adapa</span>
+      <span>Site Reliability Engineer · Bengaluru, India</span>
+    </div>
+  </footer>
+
+  <button class="ai-fab" id="aiFab" type="button">✦ Ask Teja AI</button>
+  <aside class="ai-panel" id="aiPanel" aria-label="Teja AI portfolio assistant">
+    <div class="ai-head">
+      <div><b>✦ Teja AI</b><div class="ai-status">PORTFOLIO ASSISTANT · VERIFIED PROFILE DATA</div></div>
+      <button class="ai-close" id="aiClose" type="button" aria-label="Close Teja AI">×</button>
+    </div>
+    <div class="ai-chat" id="aiChat">
+      <div class="msg bot">Hi — I’m Teja’s portfolio assistant. Ask me about his SRE experience, AWS work, production incidents, deployments, monitoring, certifications or contact details.</div>
+      <div class="chips">
+        <button class="chip" type="button">Tell me about Teja</button>
+        <button class="chip" type="button">Production incidents</button>
+        <button class="chip" type="button">AWS experience</button>
+        <button class="chip" type="button">Monitoring experience</button>
+        <button class="chip" type="button">Why SRE?</button>
+        <button class="chip" type="button">Certifications</button>
+      </div>
+    </div>
+    <form class="ai-form" id="aiForm">
+      <input id="aiInput" autocomplete="off" placeholder="Ask about Teja's SRE experience…">
+      <button type="submit">↑</button>
+    </form>
+  </aside>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const typedMessage = document.getElementById('typedMessage');
+    const heroMessage = 'Building reliable production systems across AWS, Kubernetes, CI/CD, observability and incident response.';
+    if (typedMessage) {
+      const typingSpeed = 38;
+      const completedHold = 3000;
+
+      const runHeroTyping = () => {
+        let messageIndex = 0;
+        typedMessage.textContent = '';
+
+        const typeNextCharacter = () => {
+          messageIndex += 1;
+          typedMessage.textContent = heroMessage.slice(0, messageIndex);
+
+          if (messageIndex < heroMessage.length) {
+            window.setTimeout(typeNextCharacter, typingSpeed);
+          } else {
+            window.setTimeout(runHeroTyping, completedHold);
+          }
+        };
+
+        typeNextCharacter();
+      };
+
+      window.setTimeout(runHeroTyping, 450);
+    }
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navItems = [...document.querySelectorAll('.links a')];
+    const activateNav = () => {
+      let current = 'home';
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top <= 120) current = section.id;
+      });
+      navItems.forEach(item => item.classList.toggle('active', item.getAttribute('href') === '#' + current));
+    };
+    window.addEventListener('scroll', activateNav, {passive:true});
+    activateNav();
+
+    const fab = document.getElementById('aiFab');
+    const panel = document.getElementById('aiPanel');
+    const closeAI = document.getElementById('aiClose');
+    const chat = document.getElementById('aiChat');
+    const form = document.getElementById('aiForm');
+    const input = document.getElementById('aiInput');
+    const openAiFromHero = document.getElementById('openAiFromHero');
+
+    function openAI(){
+      if (!panel) return;
+      panel.classList.add('open');
+      setTimeout(() => input && input.focus(), 120);
+    }
+    function toggleAI(){
+      if (!panel) return;
+      panel.classList.toggle('open');
+      if (panel.classList.contains('open')) setTimeout(() => input && input.focus(), 120);
+    }
+    if (fab) fab.addEventListener('click', toggleAI);
+    if (closeAI) closeAI.addEventListener('click', () => panel && panel.classList.remove('open'));
+    if (openAiFromHero) openAiFromHero.addEventListener('click', openAI);
+
+    const answers = {
+      about: 'Adapa Venkata Teja is an SRE Engineer with 2.6+ years of experience supporting enterprise production systems. He supports 4 production applications, 30+ production servers and around 20 PPE servers, has executed 200+ deployments, and participates in production incident response and 24/7 on-call operations.',
+      incident: 'A representative production incident involved heavy Elasticsearch workload causing search latency. Requests remained active, Tomcat threads became saturated, ALB health checks started failing and the application became unresponsive. Teja supported investigation, remediation, reindexing, controlled rollout and post-change validation.',
+      aws: 'Teja has hands-on AWS experience across EC2, EBS, ALB/NLB, Auto Scaling, VPC, IAM, Route 53, CloudWatch, Lambda, EventBridge, DynamoDB, RDS, ECR, EKS, S3, SSM, Glue, WAF, ACM and CloudFormation.',
+      monitor: 'Teja works with Datadog, AWS CloudWatch, Prometheus, Grafana and ELK concepts for metrics, logs, dashboards, alerting and troubleshooting. His monitoring improvements contributed to about a 30% reduction in reported alert noise.',
+      sre: 'Teja’s experience is centered on production reliability: deployments, on-call support, incident triage, RCA, observability, infrastructure troubleshooting, change management, smoke checks, DR support and cross-team recovery.',
+      cert: 'Teja holds the OCI 2025 Certified Foundations Associate credential, valid through October 2027, and has completed AWS Cloud Practitioner Essentials through AWS Skill Builder.',
+      deploy: 'Teja has executed 200+ deployments, including production change coordination, regional rollouts, smoke checks, end-to-end validation, rollback awareness and closure activities.',
+      contact: 'You can contact Teja at tejaa7048@gmail.com, connect on LinkedIn at linkedin.com/in/tejaadapa, view GitHub at github.com/Teja-2562304, or open the resume from the Resume card on this site.'
+    };
+    function reply(q){
+      const text = q.toLowerCase();
+      if (text.includes('incident') || text.includes('production issue') || text.includes('difficult') || text.includes('case')) return answers.incident;
+      if (text.includes('aws') || text.includes('cloud')) return answers.aws;
+      if (text.includes('monitor') || text.includes('datadog') || text.includes('observ') || text.includes('alert')) return answers.monitor;
+      if (text.includes('cert')) return answers.cert;
+      if (text.includes('deploy') || text.includes('release')) return answers.deploy;
+      if (text.includes('contact') || text.includes('email') || text.includes('linkedin') || text.includes('github') || text.includes('resume')) return answers.contact;
+      if (text.includes('why') && text.includes('sre')) return answers.sre;
+      if (text.includes('about') || text.includes('tell me') || text.includes('experience')) return answers.about;
+      return 'I can answer from Teja’s verified portfolio data. Try asking about AWS, production incidents, deployments, monitoring, SRE responsibilities, certifications, contact details or resume.';
+    }
+    function addMessage(kind, text){
+      if (!chat) return;
+      const div = document.createElement('div');
+      div.className = 'msg ' + kind;
+      div.textContent = text;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+    function ask(q){
+      const question = (q || '').trim();
+      if (!question) return;
+      addMessage('usr', question);
+      setTimeout(() => addMessage('bot', reply(question)), 300);
+    }
+    if (form) {
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        ask(input.value);
+        input.value = '';
+      });
+    }
+    document.querySelectorAll('.chip').forEach(chip => chip.addEventListener('click', () => ask(chip.textContent)));
+  </script>
+</body>
+</html>
